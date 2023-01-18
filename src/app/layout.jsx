@@ -1,4 +1,6 @@
 import './globals.css'
+import { K2D } from "@next/font/google";
+const k2d = K2D({weight: "400", subsets: ['latin']})
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +10,7 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className={k2d.className}>{children}</body>
     </html>
   )
 }
