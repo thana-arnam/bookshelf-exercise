@@ -6,12 +6,9 @@ const k2d = K2D({weight: "400", subsets: ['latin']})
 
 export default function RootLayout({ children }) {
   return (
-      <html lang="en">
-        <head/>
-        <body className={k2d.className}>
-            <Navbar/>
-            <main className={styles.main}>{children}</main>
-        </body>
-      </html>
+      <>
+        <Navbar/>
+        <main className={`${styles.main} ${k2d.className}`}>{children}</main>
+      </>
   )
 }
