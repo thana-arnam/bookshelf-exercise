@@ -12,7 +12,7 @@ export default function Bookshelf() {
             "finished": false
         },
         {
-            "id": 1,
+            "id": 2,
             "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
             "desc": "Eric Evans has written a fantastic book on how you can make the design of your software match your mental model of the problem domain you are addressing.",
             "owner": "thoritie",
@@ -25,7 +25,7 @@ export default function Bookshelf() {
         <>
             <div className="bookList">
                 {books.map(book => {
-                    return <Book title={book.title} finished={book.finished}/>
+                    return <Book key={book.id} title={book.title} finished={book.finished}/>
                 })}
             </div>
         </>
