@@ -1,0 +1,40 @@
+* {
+    font-family: 'K2D', sans-serif;
+}
+
+.text-title {
+    font-family: 'Playfair Display', serif;
+}
+
+.bookList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.book {
+    max-width: 269px;
+    margin: 1rem 1rem 1rem 0;
+}
+
+.bookName {
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.readingStatus {
+    background: #DBDBDB;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+}
+
+.book-thumbnail {
+    width: 215px;
+    height: 290px;
+    overflow: hidden;
+}
+
+.book-thumbnail img {
+    max-height: 100%;
+}

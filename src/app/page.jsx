@@ -1,5 +1,11 @@
-const HomePage = () => {
-    return "Hello"
-}
+import BookList from "../components/BookList";
 
-export default HomePage
+const HomePage = () => {
+  return (
+    <>
+      <BookList />
+    </>
+  );
+};
+
+export default HomePage;
