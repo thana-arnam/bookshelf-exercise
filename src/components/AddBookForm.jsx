@@ -9,6 +9,7 @@ const AddBookForm = ({ addBook }) => {
     addBook({
       title,
       id: Date.now(),
+      category: "Computer",
     });
     setTitle("");
   };

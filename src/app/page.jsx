@@ -4,7 +4,9 @@ import AddBookForm from "@/components/AddBookForm";
 import BookList from "@/components/BookList";
 
 const HomePage = () => {
-  const [books, setBooks] = useImmer([{ id: 1, title: "Clean Code" }]);
+  const [books, setBooks] = useImmer([
+    { id: 1, title: "Clean Code", category: "Computer" },
+  ]);
   const addBook = (book) => {
     setBooks((draft) => {
       draft.push(book);
