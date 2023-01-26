@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const AddBookForm = ({ addBook }) => {
   const [title, setTitle] = useState("");
+  const category = "Computer";
   const handleSubmit = (e) => {
     e.preventDefault();
     addBook({
@@ -21,11 +22,12 @@ const AddBookForm = ({ addBook }) => {
         </div>
         <div>
           <label>Category </label>
-          <select>
+          <select value={category}>
             <option>Computer</option>
             <option>Novel</option>
           </select>
         </div>
+        {category}
       </form>
     </div>
   );
