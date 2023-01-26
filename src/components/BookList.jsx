@@ -1,14 +1,14 @@
 import Book from "@/components/Book";
 
-const BookList = ({ books, removeBook }) => {
+const BookList = ({ books, removeBook, bookCount }) => {
   return (
     <>
-      <h2>COLLECTION</h2>
-      <ul>
+      <h2>COLLECTION ({bookCount})</h2>
+      <ol>
         {books.map((book) => (
           <Book key={book.id} data={book} removeBook={removeBook} />
         ))}
-      </ul>
+      </ol>
     </>
   );
 };
