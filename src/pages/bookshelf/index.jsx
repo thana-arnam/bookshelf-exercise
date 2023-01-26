@@ -23,7 +23,7 @@ export default function Bookshelf() {
             finished: true,
         },
     ];
-    const addNewBookModal = useModal(false);
+    const addNewBookModal = useModal();
 
     return (
         <>
