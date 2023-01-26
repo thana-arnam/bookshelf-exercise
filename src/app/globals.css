@@ -113,3 +113,40 @@ a {
   padding: 0.4rem 0.8rem;
   border-radius: 15px;
 }
+
+.modal-overlay {
+  background: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content {
+  background: white;
+  width: 1280px;
+  max-width: 90%;
+  margin: 60px auto 0;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button-icon {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+.button-icon:hover {
+  background: rgba(0,0,0,0.1);
+}
