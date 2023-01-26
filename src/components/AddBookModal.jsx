@@ -1,7 +1,7 @@
 import Modal from "./Modal";
 
 const AddBookModal = ({ isShow, close }) => {
-    // if (!isShow) return null;
+    if (!isShow) return null;
     return (
         <Modal close={close}>
             <h1 className="text-title text-big">
