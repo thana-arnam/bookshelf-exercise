@@ -1,17 +1,20 @@
 "use client";
 import { useState } from "react";
 
+const INITIAL_FORM = { title: "", category: "" }
+
 const AddBookForm = ({ addBook }) => {
-  const [title, setTitle] = useState("");
-  const category = "Computer";
+  const [form, setForm] = useState(INITIAL_FORM);
   const handleSubmit = (e) => {
     e.preventDefault();
     addBook({
-      title,
+      ...form,
       id: Date.now(),
-      category: "Computer",
     });
-    setTitle("");
+    setForm(INITIAL_FORM);
+  };
+  const handleChange = (field, value) => {
+    setForm({ ...form, [field]: value });
   };
   return (
     <div>
@@ -19,17 +22,22 @@ const AddBookForm = ({ addBook }) => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title </label>
-          <input value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input
+            value={form.title}
+            onChange={(e) => handleChange("title", e.target.value)}
+          />
         </div>
         <div>
           <label>Category </label>
-          <select value={category}>
+          <select
+            value={form.category}
+            onChange={(e) => handleChange("category", e.target.value)}
+          >
             <option disabled></option>
             <option>Computer</option>
             <option>Novel</option>
           </select>
         </div>
-        {category}
       </form>
     </div>
   );
