@@ -241,3 +241,41 @@ button {
 .badge.active {
   border: 1px solid #000000;
 }
+.bookDetail {
+  display: flex;
+}
+
+.bookDetail > .left{
+  margin-right: 3rem;
+}
+
+
+.bookDetail .bookName {
+  font-size: 48px;
+}
+
+.bookDetail .description {
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+
+
+.bookDetail .category {
+  background: #F1F1F1;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+}
+
+.bookDetail .readBtn {
+  background: #000000;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.bookDetail .img {
+  margin-bottom: 2rem;
+}
