@@ -1,16 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useImmer } from "use-immer";
 import AddBookForm from "@/components/AddBookForm";
 import BookList from "@/components/BookList";
 
 const HomePage = () => {
-  const [books, setBooks] = useState([{ id: 1, title: "Clean Code" }]);
+  const [books, setBooks] = useImmer([{ id: 1, title: "Clean Code" }]);
   const addBook = (book) => {
-    setBooks([...books, book]);
+    setBooks((draft) => {
+      draft.push(book);
+    });
   };
   const removeBook = (id) => {
-    const newBooks = books.filter((b) => b.id !== id);
-    setBooks(newBooks);
+    const idx = books.findIndex((b) => b.id === id);
+    setBooks((draft) => {
+      draft.splice(idx, 1);
+    });
   };
   return (
     <div>
