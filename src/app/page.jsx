@@ -8,11 +8,15 @@ const HomePage = () => {
   const addBook = (book) => {
     setBooks([...books, book]);
   };
+  const removeBook = (id) => {
+    const newBooks = books.filter((b) => b.id !== id);
+    setBooks(newBooks);
+  };
   return (
     <div>
       <AddBookForm addBook={addBook} />
       <hr />
-      <BookList books={books} />
+      <BookList books={books} removeBook={removeBook} />
     </div>
   );
 };
