@@ -1,17 +1,23 @@
 "use client";
 import { useState } from "react";
 
-const AddBookForm = () => {
-  const [title, setTitle] = useState("Domain Driven Design");
+const AddBookForm = ({ addBook }) => {
+  const [title, setTitle] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addBook({
+      title,
+      id: Date.now(),
+    });
+    setTitle("");
+  };
   return (
     <div>
       <h1>ADD TO COLLECTION</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Title </label>
           <input value={title} onChange={(e) => setTitle(e.target.value)} />
-          <br />
-          {title}
         </div>
       </form>
     </div>

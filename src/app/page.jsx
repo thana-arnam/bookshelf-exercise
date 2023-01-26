@@ -4,10 +4,13 @@ import AddBookForm from "@/components/AddBookForm";
 import BookList from "@/components/BookList";
 
 const HomePage = () => {
-  const [books, setBooks] = useState([{ title: "Clean Code 2" }]);
+  const [books, setBooks] = useState([{ id: 1, title: "Clean Code" }]);
+  const addBook = (book) => {
+    setBooks([...books, book]);
+  };
   return (
     <div>
-      <AddBookForm />
+      <AddBookForm addBook={addBook} />
       <hr />
       <BookList books={books} />
     </div>
