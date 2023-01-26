@@ -1,7 +1,8 @@
 const Book = ({ data, removeBook }) => {
   return (
     <li>
-      {data.title} <span onClick={() => removeBook(data.id)}>&#10008;</span>
+      {data.title} (category){" "}
+      <span onClick={() => removeBook(data.id)}>&#10008;</span>
     </li>
   );
 };

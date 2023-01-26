@@ -19,6 +19,13 @@ const AddBookForm = ({ addBook }) => {
           <label>Title </label>
           <input value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
+        <div>
+          <label>Category </label>
+          <select>
+            <option>Computer</option>
+            <option>Novel</option>
+          </select>
+        </div>
       </form>
     </div>
   );
