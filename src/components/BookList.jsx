@@ -1,4 +1,4 @@
-import Book from "@/components/tempBook";
+import Book from "@/components/Book";
 
 const BookList = ({ books, removeBook }) => {
   return (
