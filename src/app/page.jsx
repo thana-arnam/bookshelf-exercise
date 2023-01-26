@@ -1,8 +1,10 @@
+"use client";
+import { useState } from "react";
 import AddBookForm from "@/components/AddBookForm";
 import BookList from "@/components/BookList";
 
 const HomePage = () => {
-  const books = [{ title: "Clean Code" }];
+  const [books, setBooks] = useState([{ title: "Clean Code 2" }]);
   return (
     <div>
       <AddBookForm />
