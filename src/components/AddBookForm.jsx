@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useImmer } from "use-immer";
 
-const INITIAL_FORM = { title: "", category: "" }
+const INITIAL_FORM = { title: "", category: "" };
 
 const AddBookForm = ({ addBook }) => {
-  const [form, setForm] = useState(INITIAL_FORM);
+  const [form, setForm] = useImmer(INITIAL_FORM);
   const handleSubmit = (e) => {
     e.preventDefault();
     addBook({
@@ -14,7 +14,9 @@ const AddBookForm = ({ addBook }) => {
     setForm(INITIAL_FORM);
   };
   const handleChange = (field, value) => {
-    setForm({ ...form, [field]: value });
+    setForm((draft) => {
+      draft[field] = value;
+    });
   };
   return (
     <div>
