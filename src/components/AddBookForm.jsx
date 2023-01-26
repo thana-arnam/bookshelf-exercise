@@ -23,6 +23,7 @@ const AddBookForm = ({ addBook }) => {
         <div>
           <label>Category </label>
           <select value={category}>
+            <option disabled></option>
             <option>Computer</option>
             <option>Novel</option>
           </select>
