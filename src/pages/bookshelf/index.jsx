@@ -2,6 +2,7 @@
 
 import Book from "@/components/book";
 import Modal from "../../components/Modal";
+import AddBookModal from "../../components/AddBookModal";
 import useModal from "../../hooks/useModal";
 
 export default function Bookshelf() {
@@ -39,9 +40,10 @@ export default function Bookshelf() {
                     );
                 })}
             </div>
-            {addNewBookModal.isShow && (
-                <Modal close={addNewBookModal.close}>content</Modal>
-            )}
+            <AddBookModal
+                isShow={addNewBookModal.isShow}
+                close={addNewBookModal.close}
+            />
         </>
     );
 }

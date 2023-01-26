@@ -1,7 +1,20 @@
 "use client";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
-const Modal = ({ children, close, title }) => {
+const usePreventOutsideScroll = () => {
+    useEffect(() => {
+        document.body.style.maxHeight = "100vh";
+        document.body.style.overflowY = "hidden";
+        return () => {
+            document.body.style.maxHeight = null;
+            document.body.style.overflowY = "unset";
+        };
+    }, []);
+};
+
+const Modal = ({ children, close }) => {
+    usePreventOutsideScroll();
     if (document === undefined) return null;
     return createPortal(
         <div className="modal-overlay" onClick={close}>

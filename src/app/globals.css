@@ -79,6 +79,17 @@
   margin: 0;
 }
 
+.text-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+
+.text-big {
+  font-weight: 900; 
+  font-size: 60px;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -121,14 +132,16 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
+  overflow: scroll;
+  padding: 60px;
 }
 
 .modal-content {
   background: white;
-  width: 1280px;
+  width: 960px;
   max-width: 90%;
-  margin: 60px auto 0;
-  padding: 24px;
+  margin: 0 auto;
+  padding: 24px 48px;
 }
 
 .modal-header {
@@ -149,4 +162,65 @@ button {
 }
 .button-icon:hover {
   background: rgba(0,0,0,0.1);
+}
+
+.add-book-form {
+  margin-top: 24px;
+}
+.form-field {
+  display: flex;
+  padding: 12px 0;
+}
+.field-label {
+  flex: 1;
+  padding-top: 8px;
+}
+.field-input {
+  flex: 2;
+  width: 100%;
+}
+.field-input > input {
+  width: 100%;
+  height: 36px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.field-input > textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.field-input > select {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.pt-12 {
+  margin-top: 12px;
+}
+.two-option {
+  display: flex;
+}
+.two-option > label {
+  flex: 1;
+}
+.image-thumbnail {
+  padding-top: 16px;
+}
+
+.btn-primary {
+  padding: 8px 12px;
+  background: black;
+  border-radius: 8px;
+  color: white;
+  border: none;
+}
+.btn-primary:hover {
+  background: rgba(0,0,0,0.7);
+}
+.text-right {
+  text-align: right;
 }
