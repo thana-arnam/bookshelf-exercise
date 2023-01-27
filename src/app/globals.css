@@ -77,6 +77,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'K2D', 'sans-serif';
 }
 
 .text-title {
@@ -91,6 +92,19 @@
 
 .text-big {
   font-weight: 900; 
+  font-size: 60px;
+}
+
+.flex {
+  display: flex;
+}
+.bookshelf-header * {
+  flex: 1;
+}
+
+.bookshelf-owner {
+  font-weight: 400;
+  font-style: normal;
   font-size: 60px;
 }
 

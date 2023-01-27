@@ -8,9 +8,18 @@ const playfairDisplay = Playfair_Display({ weight: "900", subsets: ["latin"] });
 function Home() {
     return (
         <>
-            <h1 className={`${playfairDisplay.className} text-big`}>
-                THE COLLECTION
-            </h1>
+            <div className="flex bookshelf-header">
+                <h1 className={`${playfairDisplay.className} text-big`}>
+                    THE
+                    <br />
+                    COLLECTION
+                </h1>
+                <h2 class="bookshelf-owner">
+                    by
+                    <br />
+                    bazsup
+                </h2>
+            </div>
             <Bookshelf />
         </>
     );
