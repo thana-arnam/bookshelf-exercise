@@ -5,13 +5,24 @@ import Bookshelf from "@/pages/bookshelf";
 
 const playfairDisplay = Playfair_Display({ weight: "900", subsets: ["latin"] });
 
-export default function Home() {
+function Home() {
     return (
         <>
             <h1 className={`${playfairDisplay.className} text-big`}>
                 THE COLLECTION
             </h1>
             <Bookshelf />
+        </>
+    );
+}
+
+export default function WithLayout(page) {
+    return (
+        <>
+            <Navbar />
+            <main className={styles.main}>
+                <Home />
+            </main>
         </>
     );
 }
