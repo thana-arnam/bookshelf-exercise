@@ -38,6 +38,7 @@ export default function Book({
                 isShow={bookDetailModal.isShow}
                 close={bookDetailModal.close}
                 title={title}
+                coverImg={coverImg}
                 description={description}
                 category={category}
             />
