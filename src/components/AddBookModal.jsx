@@ -61,7 +61,7 @@ const AddBookModal = ({ isShow, close }) => {
                     </div>
                 </div>
                 <div className="pt-12 text-right">
-                    <button class="btn-primary">SAVE</button>
+                    <button className="btn-primary">SAVE</button>
                 </div>
             </form>
         </Modal>
