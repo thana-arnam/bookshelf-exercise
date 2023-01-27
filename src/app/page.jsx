@@ -1,16 +1,22 @@
-import {Playfair_Display} from '@next/font/google'
-import styles from './page.module.css'
-import Navbar from "@/app/navbar";
+"use client";
 import Bookshelf from "@/pages/bookshelf";
+import TypingAnimation from "@/components/TypingAnimation";
 
-const playfairDisplay = Playfair_Display({weight: "900", subsets: ['latin']})
+const title = `THE
+COLLECTION`;
 
 export default function Home() {
-  return (
-      <>
-        <h1 className={playfairDisplay.className}>THE COLLECTION</h1>
-        <p>This is body</p>
-        <Bookshelf/>
-      </>
-  )
+    return (
+        <>
+            <div className="header">
+                {/* <TypingAnimation fullText={title} speed={100} /> */}
+                <h1 className="type-animation text-title text-big">
+                    THE <br />
+                    COLLECTION
+                </h1>
+            </div>
+            <p>This is body</p>
+            <Bookshelf />
+        </>
+    );
 }

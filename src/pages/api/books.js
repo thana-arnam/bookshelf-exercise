@@ -39,7 +39,6 @@ const defaultCategory = "Computer";
 
 export default function handler(req, res) {
     const category = req.query.category || defaultCategory;
-    console.log();
     const result = books.filter((b) => b.category === category);
 
     delay(() => {

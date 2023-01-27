@@ -89,6 +89,9 @@
   font-weight: 900; 
   font-size: 60px;
 }
+.header {
+  min-height: 160px;
+}
 
 html,
 body {
@@ -240,4 +243,16 @@ button {
 
 .badge.active {
   border: 1px solid #000000;
+}
+@keyframes blink {
+  from{
+      opacity: 0%;
+   }
+   to{
+       opacity: 100%;
+    }
+}
+.type-animation::after{
+   content: "|";
+   animation: blink 1s infinite;
 }
