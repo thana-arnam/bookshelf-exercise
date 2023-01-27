@@ -84,6 +84,10 @@
   font-weight: 700;
 }
 
+.text-medium {
+  font-weight: 700; 
+  font-size: 60px;
+}
 
 .text-big {
   font-weight: 900; 
@@ -294,4 +298,41 @@ button {
 
 .bookDetail .img {
   margin-bottom: 2rem;
+}
+@keyframes blink {
+  from{
+      opacity: 0%;
+   }
+   to{
+       opacity: 100%;
+    }
+}
+.type-animation::after{
+   content: "|";
+   animation: blink 1s infinite;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 400px;
+  margin: 100px auto 0;
+}
+.text-center {
+  text-align: center;
+}
+.login-form {
+  padding: 12px 48px;
+  box-sizing: content-box;
+}
+.login-form  input, .login-form  label {
+  width: 100%;
+} 
+.column {
+  flex-direction: column;
+}
+.w-full {
+  width: 100%;
+  flex: 1;
 }
