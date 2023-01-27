@@ -276,6 +276,22 @@ button {
   text-decoration: none;
 }
 
+.addBook {
+  display: flex;
+  justify-content: end;
+}
+
+.addBtn{
+  background: #000000;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .bookDetail .img {
   margin-bottom: 2rem;
 }
