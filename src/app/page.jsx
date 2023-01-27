@@ -8,8 +8,7 @@ const playfairDisplay = Playfair_Display({weight: "900", subsets: ['latin']})
 export default function Home() {
   return (
       <>
-        <h1 className={playfairDisplay.className}>THE COLLECTION</h1>
-        <p>This is body</p>
+        <h1 className={`${playfairDisplay.className} text-big`}>THE COLLECTION</h1>
         <Bookshelf/>
       </>
   )
