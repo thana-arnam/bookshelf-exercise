@@ -1,9 +1,21 @@
 "use client";
 
 import Book from "@/components/book";
-import Modal from "../../components/Modal";
+import Badge from "../../components/Badge";
 import AddBookModal from "../../components/AddBookModal";
 import useModal from "../../hooks/useModal";
+import { useState } from "react";
+
+const categories = [
+    {
+        name: "Computer",
+        icon: "💻",
+    },
+    {
+        name: "Novel",
+        icon: "🧚‍♀️",
+    },
+];
 
 export default function Bookshelf() {
     const books = [
@@ -25,9 +37,21 @@ export default function Bookshelf() {
         },
     ];
     const addNewBookModal = useModal();
+    const [selectedCategory, setSelectedCategory] = useState("Computer");
 
     return (
         <>
+            <div className="badge-group">
+                {categories.map((category) => (
+                    <Badge
+                        key={category.name}
+                        active={category.name === selectedCategory}
+                        onSelect={() => setSelectedCategory(category.name)}
+                    >
+                        {category.icon} {category.name}
+                    </Badge>
+                ))}
+            </div>
             <div className="bookList">
                 {books.map((book) => {
                     return (

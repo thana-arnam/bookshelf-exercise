@@ -224,3 +224,20 @@ button {
 .text-right {
   text-align: right;
 }
+
+.badge-group {
+  display: flex;
+  gap: 12px;
+}
+
+.badge {
+  padding: 8px 12px;
+  
+  border: 1px solid transparent;
+  background: #F1F1F1;
+  border-radius: 12px;
+}
+
+.badge.active {
+  border: 1px solid #000000;
+}
