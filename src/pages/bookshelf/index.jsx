@@ -42,6 +42,9 @@ export default function Bookshelf() {
     ];
     const addNewBookModal = useModal();
     const [selectedCategory, setSelectedCategory] = useState("Computer");
+    const refresh = () => {
+        // Call API get bookshelf
+    };
 
     return (
         <>
@@ -78,6 +81,7 @@ export default function Bookshelf() {
             <AddBookModal
                 isShow={addNewBookModal.isShow}
                 close={addNewBookModal.close}
+                refresh={refresh}
             />
         </>
     );

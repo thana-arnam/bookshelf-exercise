@@ -9,12 +9,14 @@ const INITIAL_FORM = {
     finished: null,
 };
 
-const AddBookModal = ({ isShow, close }) => {
+const AddBookModal = ({ isShow, close, refresh }) => {
     const { form, register, registerRadio, reset } = useForm(INITIAL_FORM);
     const handleSubmit = (e) => {
         e.preventDefault();
         // Call API create
         reset();
+        refresh();
+        close();
     };
 
     if (!isShow) return null;
