@@ -41,6 +41,9 @@ export default function Bookshelf() {
 
     return (
         <>
+            <div className="addBook">
+                <a className="addBtn" onClick={addNewBookModal.open}>ADD MORE</a>
+            </div>
             <div className="badge-group">
                 {categories.map((category) => (
                     <Badge
@@ -59,7 +62,8 @@ export default function Bookshelf() {
                             key={book.id}
                             title={book.title}
                             finished={book.finished}
-                            addNewBook={addNewBookModal.open}
+                            description={book.desc}
+                            category={book.category}
                         />
                     );
                 })}
