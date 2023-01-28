@@ -1,29 +1,22 @@
 "use client";
 
-import Book from "@/components/book";
 import { useState, useEffect } from "react";
+import Book from "@/components/book";
+import { useQuery } from "react-query";
 import api from "@/utils/api";
 import AddBookModal from "../../components/AddBookModal";
 import useModal from "../../hooks/useModal";
 
 export default function Bookshelf() {
-    const [books, setBooks] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const getBooks = () => {
-        setIsLoading(true);
+    const { isLoading, data: books } = useQuery("books/bazsup", () =>
         api.get("/bookshelf/bazsup").then((res) => {
-            setBooks(res.data);
-            setIsLoading(false);
-        });
-    };
+            return res.data;
+        })
+    );
     const addNewBookModal = useModal();
     const refresh = () => {
         // Call API get bookshelf
     };
-
-    useEffect(() => {
-        getBooks();
-    }, []);
     return (
         <>
             <div className="addBook">

@@ -1,16 +1,17 @@
+"use client";
 import "./globals.css";
-import { K2D } from "@next/font/google";
-import Navbar from "@/app/navbar";
-import styles from "@/app/page.module.css";
-const k2d = K2D({ weight: "400", subsets: ["latin"] });
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head />
             <body>
-                {/* <Navbar /> */}
-                {children}
+                <QueryClientProvider client={queryClient}>
+                    {children}
+                </QueryClientProvider>
             </body>
         </html>
     );
