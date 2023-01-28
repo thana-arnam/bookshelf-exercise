@@ -1,5 +1,7 @@
 import Modal from "./Modal";
 import useForm from "@/hooks/useForm";
+import api from "@/utils/api";
+import Image from "next/image";
 
 const INITIAL_FORM = {
     title: "",
@@ -11,12 +13,23 @@ const INITIAL_FORM = {
 
 const AddBookModal = ({ isShow, close, refresh }) => {
     const { form, register, registerRadio, reset } = useForm(INITIAL_FORM);
+    const createBook = ({ book, onSuccess }) => {
+        api.post("/bookshelf", book).then(onSuccess);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Call API create
-        reset();
-        refresh();
-        close();
+        createBook({
+            book: {
+                ...form,
+                owner: "bazsup",
+            },
+            onSuccess: () => {
+                reset();
+                refresh();
+                close();
+            },
+        });
     };
 
     if (!isShow) return null;
