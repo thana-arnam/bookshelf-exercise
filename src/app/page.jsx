@@ -1,20 +1,19 @@
-import Quiz1 from "../components/Quiz1"
-import Quiz2 from "../components/Quiz2"
-import Quiz3 from "../components/Quiz3"
-import Quiz4 from "../components/Quiz4"
+import Quiz1 from "../components/Quiz1";
+import Quiz2 from "../components/Quiz2";
+import Quiz3 from "../components/Quiz3";
+import Quiz4 from "../components/Quiz4";
 
 const HomePage = () => {
-    return (
-        <>
-            <b>Instruction:</b> Open file <code>pages/index.jsx</code>
-            {/* Uncomment the code below to start quiz */}
-            
-            {/* <Quiz1 /> */}
-            {/* <Quiz2 /> */}
-            {/* <Quiz3 /> */}
-            {/* <Quiz4 /> */}
-        </>
-    )
-}
+  return (
+    <>
+      <b>Instruction:</b> Open file <code>pages/index.jsx</code>
+      {/* Uncomment the code below to start quiz */}
+      <Quiz1 />
+      <Quiz2 />
+      <Quiz3 />
+      <Quiz4 name="Mhiew Thanamat" />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;
