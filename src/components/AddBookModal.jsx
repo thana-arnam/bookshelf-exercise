@@ -49,7 +49,16 @@ const AddBookModal = ({ isShow, close, refresh }) => {
                     <div className="field-input">
                         <input {...register("coverImg")} />
                         <div className="image-thumbnail">
-                            <img src="https://via.placeholder.com/120x160" />
+                            {form.coverImg === "" ? (
+                                <img src="https://via.placeholder.com/120x160" />
+                            ) : (
+                                <Image
+                                    src={form.coverImg}
+                                    width={120}
+                                    height={160}
+                                    alt="cover image"
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

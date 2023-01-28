@@ -8,15 +8,16 @@ import AddBookModal from "../../components/AddBookModal";
 import useModal from "../../hooks/useModal";
 
 export default function Bookshelf() {
-    const { isLoading, data: books } = useQuery("books/bazsup", () =>
+    const {
+        isLoading,
+        data: books,
+        refetch,
+    } = useQuery("books/bazsup", () =>
         api.get("/bookshelf/bazsup").then((res) => {
             return res.data;
         })
     );
     const addNewBookModal = useModal();
-    const refresh = () => {
-        // Call API get bookshelf
-    };
     return (
         <>
             <div className="addBook">
@@ -34,7 +35,7 @@ export default function Bookshelf() {
             <AddBookModal
                 isShow={addNewBookModal.isShow}
                 close={addNewBookModal.close}
-                refresh={refresh}
+                refresh={refetch}
             />
         </>
     );
