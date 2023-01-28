@@ -8,8 +8,13 @@ import useModal from "../../hooks/useModal";
 
 export default function Bookshelf() {
     const [books, setBooks] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const getBooks = () => {
-        api.get("/bookshelf/bazsup").then((res) => setBooks(res.data));
+        setIsLoading(true);
+        api.get("/bookshelf/bazsup").then((res) => {
+            setBooks(res.data);
+            setIsLoading(false);
+        });
     };
     const addNewBookModal = useModal();
     const refresh = () => {
@@ -27,18 +32,11 @@ export default function Bookshelf() {
                 </a>
             </div>
             <div className="bookList">
-                {books.map((book) => {
-                    return (
-                        <Book
-                            key={book.id}
-                            title={book.title}
-                            coverImg={book.coverImg}
-                            finished={book.finished}
-                            description={book.desc}
-                            category={book.category}
-                        />
-                    );
-                })}
+                {isLoading ? (
+                    <p>Loading Books...</p>
+                ) : (
+                    <BookList books={books} />
+                )}
             </div>
             <AddBookModal
                 isShow={addNewBookModal.isShow}
@@ -48,3 +46,18 @@ export default function Bookshelf() {
         </>
     );
 }
+
+const BookList = ({ books }) => {
+    return books.map((book) => {
+        return (
+            <Book
+                key={book.id}
+                title={book.title}
+                coverImg={book.coverImg}
+                finished={book.finished}
+                description={book.desc}
+                category={book.category}
+            />
+        );
+    });
+};
