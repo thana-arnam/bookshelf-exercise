@@ -14,7 +14,7 @@ function Home() {
                     <br />
                     COLLECTION
                 </h1>
-                <h2 class="bookshelf-owner">
+                <h2 className="bookshelf-owner">
                     by
                     <br />
                     bazsup
